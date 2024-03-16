@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from "./home/home.component";
 import { ButtonModule } from 'primeng/button';
 import { AboutComponent } from './about/about.component';
+import * as THREE from 'three';
+import DOTS from 'vanta/dist/vanta.dots.min';
 import { ContactComponent } from './contact/contact.component';
 
 @Component({
@@ -17,6 +19,8 @@ import { ContactComponent } from './contact/contact.component';
 })
 export class AppComponent {
   title = 'csc';
+
+  vantaEffect : any;
 
   showHome = true;
   showAbout = false;
@@ -41,4 +45,27 @@ export class AppComponent {
         break;
     }
   }
+
+  ngOnInit() {
+    this.vantaEffect = DOTS({
+      el: "#vanta",
+      THREE: THREE,
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x333333,
+      color2: 0x222222,
+      size: 1.50,
+      spacing: 20.00,
+      backgroundAlpha: 0.00
+    });
+  }
+  
+  ngOnDestroy() {
+    if (this.vantaEffect) this.vantaEffect.destroy();
+  }
+  
 }
