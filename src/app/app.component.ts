@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from "./home/home.component";
 import { ButtonModule } from 'primeng/button';
 import { AboutComponent } from './about/about.component';
-import * as THREE from 'three';
-import DOTS from 'vanta/dist/vanta.dots.min';
 import { ContactComponent } from './contact/contact.component';
+
+declare var VANTA: any;
 
 @Component({
     selector: 'app-root',
@@ -17,10 +17,28 @@ import { ContactComponent } from './contact/contact.component';
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule, HomeComponent, ButtonModule, AboutComponent, ContactComponent]
 })
-export class AppComponent {
-  title = 'csc';
 
-  vantaEffect : any;
+export class AppComponent implements AfterViewInit{
+
+  constructor(){}
+
+  ngAfterViewInit(): void {
+    VANTA.NET({
+      el: '#vanta', // element selector string or DOM object reference
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      points: 14.00,
+      color: 0xffffff,
+      backgroundColor: 0x6b0000,
+    })
+  }
+
+  title = 'csc';
 
   showHome = true;
   showAbout = false;
@@ -44,28 +62,6 @@ export class AppComponent {
         this.showContact = true;
         break;
     }
-  }
-
-  ngOnInit() {
-    this.vantaEffect = DOTS({
-      el: "#vanta",
-      THREE: THREE,
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x333333,
-      color2: 0x222222,
-      size: 1.50,
-      spacing: 20.00,
-      backgroundAlpha: 0.00
-    });
-  }
-  
-  ngOnDestroy() {
-    if (this.vantaEffect) this.vantaEffect.destroy();
   }
   
 }

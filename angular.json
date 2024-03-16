@@ -32,7 +32,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/scripts/three.min.js",
+              "./src/scripts/vanta.net.min.js"
+            ]
           },
           "configurations": {
             "production": {
