@@ -6,3 +6,22 @@
 .-bottom-50 {
     bottom: -12.5rem/* -192px */;
 }
+
+.max-h-svh {
+    max-height: 95%;
+}
+
+
+@media (max-width: 810px) {
+    .-bottom-50 {
+        bottom: 0 !important;
+    }
+
+    .-bottom-56 {
+        bottom: 0 !important;
+    }
+
+    .max-h-svh {
+        max-height: 90vh;
+    }
+}

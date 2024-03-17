@@ -1,6 +1,7 @@
-<div class="2xl:container wrapper mx-auto bg-white rounded-2xl column relative shadow-xl">
+<div class="2xl:container wrapper mx-auto max-h-svh mb-10 bg-white rounded-2xl column relative shadow-xl overflow-scroll">
     <div class="p-5 justify-center">
         <h2 class="text-red-800 text-center text-2xl ibm-plex">Sobre nosotros</h2>
+        <!-- Contenido de mision - vision-->
         <div class="container text-center row my-8 max-w-2xl mx-auto flex-wrap ">
             <div class="my-6 mx-auto relative group duration-500 cursor-pointer group overflow-hidden text-gray-50 h-80 w-56 rounded-2xl hover:duration-700">
                 <div class="w-64 h-80 bg-red-600 text-gray-800"></div>
@@ -18,18 +19,20 @@
                     <p class="text-neutral-800">Consolidarse como un espacio institucional en el que se potencia el desarrollo de los alumnos a través de experiencias académicas relacionadas con la ingeniería y sus diferentes especialidades.</p>
                 </div>
             </div>
-
-            <style>
-                @media (max-width: 810px) {
-                    .-bottom-50 {
-                        bottom: 0 !important;
-                    }
-
-                    .-bottom-56 {
-                        bottom: 0 !important;
-                    }
-                }
-            </style>
+            <!-- Fin contenido mision - vision-->
+        </div>
+        <h2 class="text-red-800 text-center text-2xl ibm-plex">Integrantes del capitulo</h2>
+        <!-- Tarjetas de informacion de los miembros-->
+        <div class="row max-w-3xl mx-auto my-4 gap-4 flex-wrap">
+            <app-miembros class="mx-auto" name="Mauro Alvarado" rol="Presidente"></app-miembros>
+            <app-miembros class="mx-auto" name="Jose Mares" rol="Vicepresidente"></app-miembros>
+            <app-miembros class="mx-auto" name="Leonardo Contreras" rol="Secretario Primario" imageUrl="assets/images/prueba.jpg"></app-miembros>
+            <app-miembros class="mx-auto" name="Silvia Ramos" rol="Secretario Segundo"></app-miembros>
+            <app-miembros class="mx-auto" name="Tania Salomon" rol="Tesorera"></app-miembros>
+            <app-miembros class="mx-auto" name="Valeria Arango" rol="Comunicación"></app-miembros>
+            <app-miembros class="mx-auto" name="Max Hinojosa" rol="Vinculación"></app-miembros>
+            <app-miembros class="mx-auto" name="Dayana Cabello" rol="Coordinador de Proyectos"></app-miembros>
+            <app-miembros class="mx-auto" name="Luis David" rol="Coordinador de Eventos"></app-miembros>
         </div>
     </div>
 </div>
