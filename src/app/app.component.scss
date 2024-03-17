@@ -13,6 +13,11 @@ app-header {
     z-index: 1000; /* optional: this ensures the header stays above all other content */
   }
 
+  app-about {
+    position: relative;
+    z-index: 1000; /* optional: this ensures the about stays above all other content */
+  }
+
   app-footer {
     margin-top: auto;
   }
