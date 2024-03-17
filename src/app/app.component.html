@@ -2,10 +2,10 @@
 <app-header (changePage)="handlePageChange($event)"></app-header>
 
 <!-- wrapper -->
-<div class="wrapper" id=vanta>
+<div class="wrapper bg-white backdrop-blur-xl" id=vanta>
   <!-- home  -->
   <app-home *ngIf="showHome"></app-home>
-  <app-about *ngIf="showAbout"></app-about>
+  <app-about class="backdrop-blur-xl" *ngIf="showAbout"></app-about>
   <app-contact *ngIf="showContact"></app-contact>
 </div>
 

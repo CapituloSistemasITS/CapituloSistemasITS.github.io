@@ -22,14 +22,14 @@ export class AppComponent implements AfterViewInit{
 
   constructor(){}
 
+
+  vantaEffect: any;
   ngAfterViewInit(): void {
-    VANTA.NET({
+    this.vantaEffect = VANTA.NET({
       el: '#vanta', // element selector string or DOM object reference
       mouseControls: false,
       touchControls: false,
       gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
       points: 14.00,
@@ -40,28 +40,36 @@ export class AppComponent implements AfterViewInit{
 
   title = 'csc';
 
-  showHome = false;
-  showAbout = true;
+  showHome = true;
+  showAbout = false;
   showContact = false;
+
+  resizeVanta() {
+    this.vantaEffect.resize();
+  }
 
   handlePageChange(page: string){
     switch(page){
       case 'home':
-        this.showHome = true;
-        this.showAbout = false;
-        this.showContact = false;
-        break;
-      case 'about':
-        this.showHome = false;
-        this.showAbout = true;
-        this.showContact = false;
-        break;
-      case 'contact':
-        this.showHome = false;
-        this.showAbout = false;
-        this.showContact = true;
-        break;
+    this.showHome = true;
+    this.showAbout = false;
+    this.showContact = false;
+    break;
+  case 'about':
+    this.showHome = false;
+    this.showAbout = true;
+    this.showContact = false;
+    break;
+  case 'contact':
+    this.showHome = false;
+    this.showAbout = false;
+    this.showContact = true;
+    break;
     }
+
+    setTimeout(() => {
+      this.resizeVanta();
+    }, 0);
   }
   
 }
