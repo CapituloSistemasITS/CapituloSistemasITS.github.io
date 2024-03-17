@@ -34,7 +34,7 @@ export class AppComponent implements AfterViewInit{
       scaleMobile: 1.00,
       points: 14.00,
       color: 0xffffff,
-      backgroundColor: 0x6b0000,
+      backgroundColor: 0xBE3144,
     })
   }
 
