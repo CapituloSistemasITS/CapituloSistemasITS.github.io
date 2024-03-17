@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
+import { PopupComponent } from './popup/popup.component';
 
 declare var VANTA: any;
 
@@ -16,7 +17,7 @@ declare var VANTA: any;
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule, HomeComponent, ButtonModule, AboutComponent, ContactComponent, FormComponent]
+    imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule, HomeComponent, ButtonModule, AboutComponent, ContactComponent, FormComponent, PopupComponent]
 })
 
 export class AppComponent implements AfterViewInit{
@@ -37,6 +38,13 @@ export class AppComponent implements AfterViewInit{
       color: 0xffffff,
       backgroundColor: 0xBE3144,
     })
+  }
+
+  showPopup = true;
+
+  closePopup(){
+    console.log("closePopup");
+    this.showPopup = false;
   }
 
   title = 'csc';
