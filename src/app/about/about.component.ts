@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, ElementRef, AfterViewInit, QueryList } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { MiembrosComponent } from './miembros/miembros.component';
 declare var AOS: any;
 
@@ -9,42 +9,40 @@ declare var AOS: any;
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent implements OnInit, AfterViewInit {
-  @ViewChildren('aosElement') aosElements!: QueryList<ElementRef>;
-  private observer: MutationObserver | undefined;
+export class AboutComponent implements OnInit {
+
+  constructor(private renderer: Renderer2, private el: ElementRef) { }
 
   ngOnInit() {
     AOS.init();
-  }
-
-  ngAfterViewInit() {
-    this.observer = new MutationObserver(() => {
-      this.resizeContainer();
-    });
-
-    this.aosElements.forEach(element => {
-      if (this.observer) {
-        this.observer.observe(element.nativeElement, { attributes: true, childList: true, subtree: true });
-      }
-    });
-  }
-
-  resizeContainer() {
-    const container: HTMLElement | null = document.querySelector('.wrapper');
-
-    if (container) {
-      let totalHeight = 0;
-      this.aosElements.forEach(element => {
-        totalHeight += element.nativeElement.offsetHeight;
-      });
-      console.log(totalHeight);
-      container.style.minHeight = `${totalHeight}px`;
+    if(this.isMobileOrTablet()){
+      this.changeBottomClass();
+      this.showSocialsOnMobile();
+    }else{
+      console.log('Desktop');
     }
   }
 
-  ngOnDestroy() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
+  isMobileOrTablet() {
+    return /Mobi|Android|iPad|iPhone|iPod/i.test(navigator.userAgent);
+  }
+
+  changeBottomClass() {
+    const elements = this.el.nativeElement.querySelectorAll('.-bottom-56');
+    elements.forEach((element: any) => {
+      this.renderer.removeClass(element, '-bottom-56');
+      this.renderer.addClass(element, '-bottom-0');
+    });
+  }
+
+  showSocialsOnMobile(){
+    const socials = this.el.nativeElement.querySelectorAll('.card-social');
+    const father = this.el.nativeElement.querySelectorAll('.card');
+    socials.forEach((element: any) => {
+      this.renderer.addClass(element, 'card-social-mobile');
+    });
+    father.forEach((element: any) => {
+      this.renderer.setStyle(element, 'height', '300px');
+    });
   }
 }
