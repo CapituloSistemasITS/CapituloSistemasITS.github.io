@@ -17,6 +17,9 @@ export class AboutComponent implements OnInit {
     AOS.init();
     if(this.isMobileOrTablet()){
       this.changeBottomClass();
+      this.showSocialsOnMobile();
+    }else{
+      console.log('Desktop');
     }
   }
 
@@ -25,10 +28,21 @@ export class AboutComponent implements OnInit {
   }
 
   changeBottomClass() {
-    const elements = this.el.nativeElement.querySelectorAll('.-bottom-50');
+    const elements = this.el.nativeElement.querySelectorAll('.-bottom-56');
     elements.forEach((element: any) => {
-      this.renderer.removeClass(element, '-bottom-50');
-      this.renderer.addClass(element, 'bottom-0');
+      this.renderer.removeClass(element, '-bottom-56');
+      this.renderer.addClass(element, '-bottom-0');
+    });
+  }
+
+  showSocialsOnMobile(){
+    const socials = this.el.nativeElement.querySelectorAll('.card-social');
+    const father = this.el.nativeElement.querySelectorAll('.card');
+    socials.forEach((element: any) => {
+      this.renderer.addClass(element, 'card-social-mobile');
+    });
+    father.forEach((element: any) => {
+      this.renderer.setStyle(element, 'height', '300px');
     });
   }
 }
