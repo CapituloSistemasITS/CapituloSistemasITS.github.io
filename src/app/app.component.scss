@@ -1,10 +1,23 @@
 .wrapper{
-    height: auto;
+    height: fit-content;
     padding: 20px;
     width: 100%;
 
     flex-grow: 1;
     box-sizing: border-box;
-
-    height: 100%;
 }
+
+app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* optional: this ensures the header stays above all other content */
+  }
+
+  app-about {
+    position: relative;
+    z-index: 1000; /* optional: this ensures the about stays above all other content */
+  }
+
+  app-footer {
+    margin-top: auto;
+  }

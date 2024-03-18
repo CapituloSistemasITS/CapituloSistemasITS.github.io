@@ -30,9 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/scripts/three.min.js",
+              "./src/scripts/vanta.net.min.js",
+              "./node_modules/aos/dist/aos.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,3 +1,42 @@
-<div class="wrapper column full-center max-w-3xl mx-auto rounded-lg">
-    <h1 class="text-2xl text-center ibm-plex">PAGINA EN CONSTRUCCION</h1>
+<div class="2xl:container wrapper mx-auto max-h-svh mb-10 bg-white rounded-2xl column relative shadow-xl min-h-svh pb-12">
+    <div class="p-5 justify-center">
+        <h2 class="text-red-800 text-center text-2xl ibm-plex">Sobre nosotros</h2>
+        <!-- Contenido de mision - vision-->
+        <div class="container text-center row my-8 max-w-2xl mx-auto flex-wrap ">
+            <div data-aos="fade-up" class="my-6 mx-auto relative group duration-500 cursor-pointer group overflow-hidden text-gray-50 h-80 w-56 rounded-2xl hover:duration-700">
+                <div class="w-56 h-80 bg-red-600 text-gray-800 text-center">
+                    <img class="mx-auto my-auto w-10/12 text-center" src="assets/images/webp/color.webp" alt="" data-aos="fade-up" data-aos-duration="1500">
+                </div>
+                <div class="absolute bg-gray-50 -bottom-56 w-56 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+                    <span class="text-red-800 font-bold text-xs">Mision</span>
+                    <span class="text-gray-800 font-bold text-3xl">Nuestra mision</span>
+                    <p class="text-neutral-800">Contribuir en el crecimiento académico, profesional y personal de los estudiantes de la Carrera de Ingeniería de Sistemas Computacionales de nuestro Instituto, para que colaboren en el desarrollo de su comunidad.</p>
+                </div>
+            </div>
+            <div id="vision" data-aos="fade-up" class="my-6 mx-auto relative group duration-500 cursor-pointer group overflow-hidden text-gray-50 h-80 w-56 rounded-2xl hover:duration-700">
+                <div class="w-56 h-80 bg-red-600 text-gray-800">
+                    <img class="mx-auto my-auto w-10/12 text-center" src="assets/images/webp/color.webp" alt="" data-aos="fade-up" data-aos-duration="1500">
+                </div>
+                <div class="absolute bg-gray-50 -bottom-56 w-56 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+                    <span class="text-red-800 font-bold text-xs">Vision</span>
+                    <span class="text-gray-800 font-bold text-3xl">Nuestra vision</span>
+                    <p class="text-neutral-800">Consolidarse como un espacio institucional en el que se potencia el desarrollo de los alumnos a través de experiencias académicas relacionadas con la ingeniería y sus diferentes especialidades. <br> &nbsp;</p>
+                </div>
+            </div>
+            <!-- Fin contenido mision - vision-->
+        </div>
+        <h2 class="text-red-800 text-center text-2xl ibm-plex">Integrantes del capitulo</h2>
+        <!-- Tarjetas de informacion de los miembros-->
+        <div class="row max-w-3xl mx-auto my-4 gap-4 flex-wrap">
+            <app-miembros class="mx-auto rounded-xl" name="Mauro Alvarado" rol="Presidente" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Jose Mares" rol="Vicepresidente" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Leonardo Contreras" rol="Secretario Primario" imageUrl="assets/images/prueba.jpg" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Silvia Ramos" rol="Secretario Segundo" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Tania Salomon" rol="Tesorera" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Valeria Arango" rol="Comunicación" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Max Hinojosa" rol="Vinculación" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Dayana Cabello" rol="Coordinador de Proyectos" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+            <app-miembros class="mx-auto rounded-xl" name="Luis David" rol="Coordinador de Eventos" #aosElement data-aos="fade-up" data-aos-duration="1500"></app-miembros>
+        </div>
+    </div>
 </div>

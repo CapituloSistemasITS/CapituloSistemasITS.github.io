@@ -2,11 +2,13 @@
 <app-header (changePage)="handlePageChange($event)"></app-header>
 
 <!-- wrapper -->
-<div class="wrapper">
+<div class="wrapper bg-white backdrop-blur-xl" id=vanta>
   <!-- home  -->
   <app-home *ngIf="showHome"></app-home>
-  <app-about *ngIf="showAbout"></app-about>
+  <app-about class="backdrop-blur-xl" *ngIf="showAbout"></app-about>
+  <app-contact *ngIf="showContact"></app-contact>
+  <app-form *ngIf="showForm"></app-form>
 </div>
-
+<app-popup *ngIf="showPopup" (close)="closePopup()"></app-popup>
   <!-- footer -->
   <app-footer></app-footer>

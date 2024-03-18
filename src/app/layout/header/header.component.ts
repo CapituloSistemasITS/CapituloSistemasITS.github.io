@@ -20,7 +20,8 @@ export class HeaderComponent {
       this.items = [
         { label: 'Inicio', icon: 'pi pi-fw pi-home', command: () => this.reloadPage()},
         { label: 'Conocenos!', icon: 'pi pi-fw pi-info', command : () => this.changePage.emit('about')},
-        { label: 'Contacto', icon: 'pi pi-fw pi-envelope', command : () => this.changePage.emit('contact')}
+        { label: 'Contacto', icon: 'pi pi-fw pi-envelope', command : () => this.changePage.emit('contact')},
+        {label: 'Forma parte del capitulo', icon: 'pi pi-fw pi-user-plus', command : () => this.changePage.emit('form')},
       ];
       this.activeItem = this.items[0];
     }

@@ -1,0 +1,23 @@
+.wrapper{
+    z-index: 1;
+    position: relative;
+}
+
+.-bottom-50 {
+    bottom: -12.5rem/* -192px */;
+}
+
+.max-h-svh {
+    max-height: 95%;
+}
+
+
+@media (max-width: 810px) {
+    .-bottom-50 {
+        bottom: 0px !important;
+    }
+
+    .-bottom-56 {
+        bottom: 0 !important;
+    }
+}
