@@ -49,8 +49,8 @@ export class AppComponent implements AfterViewInit{
 
   title = 'csc';
 
-  showHome = false;
-  showAbout = true;
+  showHome = true;
+  showAbout = false;
   showContact = false;
   showForm = false;
 
