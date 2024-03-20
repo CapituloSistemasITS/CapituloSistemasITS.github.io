@@ -21,3 +21,8 @@ app-header {
   app-footer {
     margin-top: auto;
   }
+
+  .overlay{
+    position: absolute;
+    z-index: 1000;
+  }
