@@ -27,6 +27,10 @@ export class AppComponent implements AfterViewInit{
 
   vantaEffect: any;
   ngAfterViewInit(): void {
+    const overlay = document.getElementById('overlay');
+    if(overlay){
+      overlay.style.display = 'none';
+    }
     this.vantaEffect = VANTA.NET({
       el: '#vanta', // element selector string or DOM object reference
       mouseControls: false,
@@ -88,7 +92,7 @@ export class AppComponent implements AfterViewInit{
 
     setTimeout(() => {
       this.resizeVanta();
-    }, 0);
+    }, 5);
   }
   
 }
