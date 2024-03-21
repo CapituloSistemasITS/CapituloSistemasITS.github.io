@@ -42,6 +42,9 @@ export class AppComponent implements AfterViewInit{
       color: 0xffffff,
       backgroundColor: 0xBE3144,
     })
+    if(this.isMobileOrTablet()){
+      this.vantaEffect.destroy();
+    }
   }
 
   showPopup = true;
@@ -60,6 +63,12 @@ export class AppComponent implements AfterViewInit{
 
   resizeVanta() {
     this.vantaEffect.resize();
+  }
+
+
+
+  isMobileOrTablet() {
+    return /Mobi|Android|iPad|iPhone|iPod/i.test(navigator.userAgent);
   }
 
   handlePageChange(page: string){
@@ -94,5 +103,5 @@ export class AppComponent implements AfterViewInit{
       this.resizeVanta();
     }, 5);
   }
-  
+
 }
