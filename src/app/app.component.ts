@@ -45,6 +45,10 @@ export class AppComponent implements AfterViewInit{
     if(this.isMobileOrTablet()){
       this.vantaEffect.destroy();
     }
+
+    setTimeout(() => {
+      this.showHome = true;
+    }, 5);
   }
 
   showPopup = true;
@@ -56,7 +60,7 @@ export class AppComponent implements AfterViewInit{
 
   title = 'csc';
 
-  showHome = true;
+  showHome = false;
   showAbout = false;
   showContact = false;
   showForm = false;
