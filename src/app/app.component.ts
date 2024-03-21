@@ -40,11 +40,15 @@ export class AppComponent implements AfterViewInit{
       color: 0xffffff,
       backgroundColor: 0xBE3144,
     })
+
+    setTimeout(() => {
+      this.showHome = true;
+    }, 5);
   }
 
   title = 'csc';
 
-  showHome = true;
+  showHome = false;
   showAbout = false;
   showContact = false;
   showForm = false;
