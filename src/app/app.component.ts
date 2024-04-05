@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -19,9 +19,13 @@ declare var VANTA: any;
        HomeComponent, ButtonModule, AboutComponent, ContactComponent, FormComponent, RouterLink],
 })
 
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements AfterViewInit, OnInit{
 
   constructor(private route: ActivatedRoute, private router:Router){ }
+
+  ngOnInit(){
+    this.router.navigate(['home']);
+  }
 
 
   vantaEffect: any;
