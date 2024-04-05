@@ -7,5 +7,6 @@
 <router-outlet></router-outlet>
 
 </div>
+<app-popup *ngIf="showPopup" (close)="closePopup()"></app-popup>
   <!-- footer -->
   <app-footer></app-footer>
