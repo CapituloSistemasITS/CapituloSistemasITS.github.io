@@ -18,7 +18,7 @@ export class HeaderComponent {
     ngOnInit() {
 
       this.items = [
-        { label: 'Inicio', icon: 'pi pi-fw pi-home', command: () => this.reloadPage()},
+        { label: 'Inicio', icon: 'pi pi-fw pi-home', command: () => this.changePage.emit('home')},
         { label: 'Conocenos!', icon: 'pi pi-fw pi-info', command : () => this.changePage.emit('about')},
         { label: 'Contacto', icon: 'pi pi-fw pi-envelope', command : () => this.changePage.emit('contact')},
         {label: 'Forma parte del capitulo', icon: 'pi pi-fw pi-user-plus', command : () => this.changePage.emit('form')},

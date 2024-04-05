@@ -4,10 +4,8 @@
 <!-- wrapper -->
 <div class="wrapper bg-white backdrop-blur-xl" id=vanta>
   <!-- home  -->
-  <app-home *ngIf="showHome"></app-home>
-  <app-about class="backdrop-blur-xl" *ngIf="showAbout"></app-about>
-  <app-contact *ngIf="showContact"></app-contact>
-  <app-form *ngIf="showForm"></app-form>
+<router-outlet></router-outlet>
+
 </div>
   <!-- footer -->
   <app-footer></app-footer>
