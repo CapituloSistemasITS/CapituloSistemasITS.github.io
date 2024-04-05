@@ -193,4 +193,15 @@ app-root {
       blinkCursor 0.5s step-end infinite alternate;
     margin-top: 1.5em;
   }
+
+
+  app-home{
+    position: relative;
+    z-index: 1000;
+  }
+
+  app-about{
+    position: relative;
+    z-index: 1000;
+  }
   

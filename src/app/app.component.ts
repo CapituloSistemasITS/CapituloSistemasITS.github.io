@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, ElementRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -17,12 +17,17 @@ declare var VANTA: any;
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule, HomeComponent, ButtonModule, AboutComponent, ContactComponent, FormComponent, PopupComponent]
+    imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule,
+       HomeComponent, ButtonModule, AboutComponent, ContactComponent, FormComponent, PopupComponent, RouterLink],
 })
 
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements AfterViewInit, OnInit{
 
-  constructor(){}
+  constructor(private route: ActivatedRoute, private router:Router){ }
+
+  ngOnInit(){
+    this.router.navigate(['home']);
+  }
 
 
   vantaEffect: any;
@@ -63,32 +68,7 @@ export class AppComponent implements AfterViewInit{
   }
 
   handlePageChange(page: string){
-    switch(page){
-      case 'home':
-        this.showHome = true;
-        this.showAbout = false;
-        this.showContact = false;
-        this.showForm = false;
-        break;
-      case 'about':
-        this.showHome = false;
-        this.showAbout = true;
-        this.showContact = false;
-        this.showForm = false;
-        break;
-      case 'contact':
-        this.showHome = false;
-        this.showAbout = false;
-        this.showContact = true;
-        this.showForm = false;
-        break;
-      case 'form':
-        this.showHome = false;
-        this.showAbout = false;
-        this.showContact = false;
-        this.showForm = true;
-        break;
-  }
+    this.router.navigate([page]);
 
     setTimeout(() => {
       this.resizeVanta();
