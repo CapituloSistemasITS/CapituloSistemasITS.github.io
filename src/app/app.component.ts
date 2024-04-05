@@ -25,6 +25,10 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   constructor(private route: ActivatedRoute, private router:Router){ }
 
+  /*
+    This onInit just navigates to the home page once the page is loead or refreshed,
+    this is to prevent the page from going to the about or any other page when the user refreshes the page.
+  */
   ngOnInit(){
     this.router.navigate(['home']);
   }
@@ -58,18 +62,19 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   title = 'csc';
 
-  showHome = true;
-  showAbout = false;
-  showContact = false;
-  showForm = false;
-
   resizeVanta() {
     this.vantaEffect.resize();
   }
 
+  /*
+    This function handles the change of the page,
+    it gets the page name from the header component through emit
+    and then navigates to the page.
+    The timeout function I'm not entirely sure if it still works but there was a bug with apple devices where the vanta effect would not resize properly
+    so fuck apple
+  */
   handlePageChange(page: string){
     this.router.navigate([page]);
-
     setTimeout(() => {
       this.resizeVanta();
     }, 5);
