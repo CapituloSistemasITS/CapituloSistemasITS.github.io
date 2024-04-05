@@ -51,6 +51,9 @@ export class AppComponent implements AfterViewInit, OnInit{
       color: 0xffffff,
       backgroundColor: 0xBE3144,
     })
+    if(this.isMobileOrTablet()){
+      this.vantaEffect.destroy();
+    }
   }
 
   showPopup = true;
@@ -73,11 +76,17 @@ export class AppComponent implements AfterViewInit, OnInit{
     The timeout function I'm not entirely sure if it still works but there was a bug with apple devices where the vanta effect would not resize properly
     so fuck apple
   */
+
+
+  isMobileOrTablet() {
+    return /Mobi|Android|iPad|iPhone|iPod/i.test(navigator.userAgent);
+  }
+
   handlePageChange(page: string){
     this.router.navigate([page]);
     setTimeout(() => {
       this.resizeVanta();
     }, 5);
   }
-  
+
 }

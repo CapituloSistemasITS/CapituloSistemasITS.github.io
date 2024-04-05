@@ -8,6 +8,11 @@
     background-color: #BE3144;
 }
 
+app-home {
+    position: relative;
+    z-index: 1000; /* optional: this ensures the home stays above all other content */
+}
+
 app-header {
     position: sticky;
     top: 0;
