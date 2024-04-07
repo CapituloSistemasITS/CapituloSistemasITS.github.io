@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit, OnInit{
   constructor(private route: ActivatedRoute, private router:Router){ }
 
   ngOnInit(){
-    this.router.navigate(['home']);
+    this.router.navigate(['contact']);
   }
 
 
@@ -50,10 +50,6 @@ export class AppComponent implements AfterViewInit, OnInit{
     if(this.isMobileOrTablet()){
       this.vantaEffect.destroy();
     }
-
-    setTimeout(() => {
-      this.showHome = true;
-    }, 5);
   }
 
   showPopup = true;
@@ -64,12 +60,6 @@ export class AppComponent implements AfterViewInit, OnInit{
   }
 
   title = 'csc';
-
-  showHome = false;
-  showAbout = false;
-  showContact = false;
-  showForm = false;
-
   resizeVanta() {
     this.vantaEffect.resize();
   }
@@ -82,7 +72,6 @@ export class AppComponent implements AfterViewInit, OnInit{
 
   handlePageChange(page: string){
     this.router.navigate([page]);
-
     setTimeout(() => {
       this.resizeVanta();
     }, 5);

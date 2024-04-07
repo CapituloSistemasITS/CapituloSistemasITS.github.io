@@ -100,4 +100,6 @@ export class MiembrosComponent {
   @Input() name!: string;
   @Input() rol!: string;
   @Input() imageUrl!: string;
+
+  
 }
