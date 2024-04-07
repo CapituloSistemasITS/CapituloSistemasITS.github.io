@@ -10,4 +10,5 @@ import { RedesComponent } from './redes/redes.component';
 })
 export class ContactComponent {
 
+
 }

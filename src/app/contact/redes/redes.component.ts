@@ -21,4 +21,8 @@ export class RedesComponent implements OnInit{
   }
   constructor(private sanitizer: DomSanitizer) {
   }
+
+  goTo(){
+    window.open(this.link, '_blank');
+  }
 }
